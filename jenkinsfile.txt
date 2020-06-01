@@ -1,0 +1,31 @@
+pipeline {
+   agent any
+
+   environment {
+       PROJECT_NAME = "SpaceX"
+       OWNER_NAME = "Ilon Mask"
+   }
+
+   stages {
+        stage('MyPipeLine') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('test2') {
+            steps {
+                echo 'start script'
+                echo 'test script'
+                echo "Hello ${OWNER_NAME}"
+                echo 'finish script'
+            }
+        }
+        stage('final-3') {
+            steps {
+                sh "python --version"
+                echo "Project name is ${PROJECT_NAME}"
+                echo "Congratulations!!!"
+            }
+        }
+   }
+}
